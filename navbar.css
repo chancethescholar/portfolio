@@ -1,0 +1,57 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav
+{
+  float: left;
+  position: fixed;
+  list-style: none;
+  margin-top: 10px;
+  padding: 8px;
+}
+
+.main-nav li
+{
+  display: inline-block;
+}
+
+.main-nav li a
+{
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 15px;
+}
+
+.main-nav li.active a
+{
+  border: 1px solid #ffb6c1;
+}
+
+.main-nav li a:hover
+{
+  border: 1px solid #ffb6c1;
+}
+
+.home
+{
+  background-image: url("pictures/landing.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about
+{
+  background-image: url("pictures/about.png");
+  height: 100%;
+  width: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

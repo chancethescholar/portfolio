@@ -1,0 +1,237 @@
+@font-face
+{
+  font-family: GlacialIndifferenceBold;
+  src: url('webfontkit-20201010-221437-bold/glacialindifference-bold-webfont.woff');
+}
+
+@font-face
+{
+  font-family: GlacialIndifference;
+  src: url('webfontkit-20201010-220058-regular/glacialindifference-regular-webfont.woff');
+}
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav
+{
+  float: left;
+  position: fixed;
+  list-style: none;
+  margin-top: 10px;
+  padding: 8px;
+}
+
+.main-nav li
+{
+  display: inline-block;
+}
+
+.main-nav li a
+{
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 20px;
+}
+
+.main-nav li.active a
+{
+  border: 1px solid #ffb6c1;
+}
+
+.main-nav li a:hover
+{
+  border: 1px solid #ffb6c1;
+}
+
+.home
+{
+  background-image: url("pictures/landing.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about
+{
+  background-image: url("pictures/about.png");
+  height: 100%;
+  width: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.heading
+{
+  background-color: #ffcc66;
+  color: white;
+  text-align: center;
+  font-size: 100px;
+  padding: 70px;
+}
+
+.heading2
+{
+  background-color: #00abab;
+  color: white;
+  text-align: center;
+  font-size: 100px;
+  padding: 70px;
+}
+
+.reserve, .local, .bookit, .hydrotask
+{
+  background-color: transparent;
+  padding: 20px;
+  width: 300px;
+  height: 200px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.reserve-inner, .local-inner, .bookit-inner, .hydrotask-inner
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.reserve:hover .reserve-inner, .local:hover .local-inner, .bookit:hover .bookit-inner, .hydrotask:hover .hydrotask-inner
+{
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.reserve-front, .reserve-back, .local-front, .local-back, .bookit-front, .bookit-back, .hydrotask-front, .hydrotask-back
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+  border-radius: 10px;
+
+}
+
+/* Style the front side (fallback if image is missing) */
+.reserve-front, .local-front, .bookit-front, .hydrotask-front
+{
+  background-color: coral;
+  color: white;
+
+}
+
+/* Style the back side */
+.reserve-back, .local-back, .bookit-back, .hydrotask-back
+{
+  background-color: coral;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.reservecode, .localcode, .localdemo, .bookitcode, .download
+{
+  background-color: transparent;
+  border: 2px solid white;
+  border-color: white;
+  border-radius: 12px;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.reservecode:hover, .localcode:hover, .localdemo:hover, .bookitcode:hover, .download:hover, .downloadresume:hover
+{
+  background-color: #66d3fa;
+}
+
+.buttons
+{
+  display: inline-block;
+  margin: 5px;
+}
+
+.column
+{
+  float: left;
+  width: 25%;
+  padding: 0 20px;
+}
+
+/* Remove extra left and right margins, due to padding in columns */
+.row
+{
+  margin: 0 -5px;
+}
+
+/* Clear floats after the columns */
+.row:after
+{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/*.resume
+{
+  background-image: url("pictures/resume.png");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}*/
+
+.downloadresume
+{
+  background-color: purple;
+  border: 2px solid white;
+  border-color: white;
+  border-radius: 12px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  /*display: inline-block;*/
+  font-size: 16px;
+  margin: -20px -100px;
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
+
+.contact
+{
+
+  height: 64%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+html {
+  scroll-behavior: smooth;
+}
