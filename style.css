@@ -60,9 +60,9 @@
     display: boxed;
     padding: 0px 30px;
     position: fixed;*/
-    background-color: transparent;
+    background-color: #1DB6F6;
+    display: block;
     padding: 0px 30px;
-    border-bottom: 3px solid lightpink;
     box-shadow: 1px 2px 3px rgba(0,0,0,0);
     position: fixed;
 }
