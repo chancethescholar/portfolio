@@ -15,61 +15,346 @@
   padding: 0;
 }
 
+@viewport
+{
+  width: device-width ;
+  zoom: 1.0 ;
+}
+
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
 .main-nav
 {
-  float: left;
-  position: fixed;
-  list-style: none;
-  margin-top: 10px;
-  padding: 8px;
+    font-family: "Comic Sans MS", sans-serif;
+    padding: 0 0 0 50px;
+    font-size: 18pt;
+    float: left;
+    color: white;
+    text-decoration: none;
 }
 
 .main-nav li
 {
-  display: inline-block;
+  font-family: "Comic Sans MS";
+  padding: 0 0 0 50px;
+  font-size: 18pt;
+  float: left;
 }
 
 .main-nav li a
 {
-  color: black;
-  text-decoration: none;
-  padding: 10px;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 20px;
-}
-
-.main-nav li.active a
-{
-  border: 1px solid #ffb6c1;
+  color: lightpink;
 }
 
 .main-nav li a:hover
 {
-  border: 1px solid #ffb6c1;
+  text-decoration: none;
+}
+
+.collapsible-menu {
+    /*background-color: transparent;
+    display: boxed;
+    padding: 0px 30px;
+    position: fixed;*/
+    background-color: transparent;
+    padding: 0px 30px;
+    border-bottom: 3px solid lightpink;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0);
+    position: fixed;
+}
+.collapsible-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+.collapsible-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.collapsible-menu label {
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 56px;
+    display: block;
+    cursor: pointer;
+    background: url(pictures/menu.png) no-repeat left center;
+    background-size: 60px 60px;
+    padding: 10px 0 10px 50px;
+}
+
+input#menu {
+    display: none;
+}
+
+input:checked +label {
+    background-image: url(pictures/close.png);
+    background-size: 50px 50px;
+}
+
+.main-nav {
+    max-height: 0;
+    overflow: hidden;
+    font-family: "Comic Sans MS";
+    padding: 0 0 0 50px;
+}
+/* Toggle Effect */
+input:checked ~ label {
+    background-image: url(pictures/close.png);
+}
+input:checked ~ .main-nav {
+    max-height: 100%;
 }
 
 .home
 {
-  background-image: url("pictures/landing.png");
+  background-color: #1db6f6;
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+}
+
+.chance, .projectstext, .contacttext, .heading, .heading2
+{
+  display: inline-block;
+  margin-top: 150;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .10em solid lightpink; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .05em; /* Adjust as needed */
+  font-size: 100pt;
+  animation:
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+.aboutme, .resumetext
+{
+  display: inline-block;
+  margin-top: 150;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .10em solid lightpink; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .05em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(30, end),
+    blink-caret-about .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing
+{
+  from { max-width: 0 }
+  to { max-width: 100% }
+
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: lightpink;}
+}
+
+@keyframes blink-caret-about {
+  from, to { border-color: transparent }
+  50% { border-color: #1db6f6;}
+}
+
+@keyframes blink-caret-projects {
+  from, to { border-color: transparent }
+  50% { border-color: white;}
 }
 
 .about
 {
-  background-image: url("pictures/about.png");
-  height: 100%;
-  width: auto;
+  height = 100%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+.about mark, .resume mark
+{
+  background-color: lightpink;
+  color: black;
+}
+
+.aboutpic
+{
+  height: 700px;
+  width: 700px;
+  width: auto;
+  float: left;
+  margin-left: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.projects
+{
+  background-color: #1db6f6;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sticky
+{
+  font-family: arial,sans-serif;
+  font-size: 100%;
+  margin: 0;
+  margin-left: 200;
+}
+
+.sticky h2, p
+{
+  font-size:100%;
+  font-weight:normal;
+}
+
+
+.sticky ul li
+{
+  list-style: none;
+}
+
+.sticky ul
+{
+  overflow: hidden;
+  padding: 0em;
+}
+
+.sticky ul li a
+{
+  margin-top: 30;
+  text-decoration: none;
+  color: white;
+  background: lightpink;
+  display: block;
+  height: 400;
+  width: 400;
+  padding: 1em;
+}
+
+.sticky ul li
+{
+  margin: 1em;
+  float: left;
+}
+
+/*drop shadows, scribble font*/
+.sticky ul li h2
+{
+  font-size: 100%;
+  font-family: arial;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.sticky ul li p
+{
+  font-size: 80%;
+  font-family: "Comic Sans MS", arial, sans-serif;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.sticky ul li a
+{
+  text-decoration: none;
+  color: white;
+  background: lightpink;
+  display: block;
+  height: 400;
+  width: 400;
+  padding: 1em;
+  /* Firefox */
+  -moz-box-shadow: 5px 5px 7px rgba(33,33,33,1);
+  /* Safari+Chrome */
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  /* Opera */
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+}
+
+/*title notes*/
+.sticky ul li a
+{
+  -webkit-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -moz-transform: rotate(-6deg);
+}
+
+/*randomly tilt*/
+.sticky ul li:nth-child(even) a
+{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+}
+
+.sticky ul li:nth-child(3n) a
+{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+}
+
+.sticky ul li:nth-child(5n) a
+{
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+}
+
+/*tilt straight and focus when hovered*/
+.sticky ul li a:hover,ul li a:focus
+{
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+
+/*smooth transition to focus*/
+.sticky ul li a
+{
+  text-decoration:none;
+  color:white;
+  background:lightpink;
+  display:block;
+  height:400;
+  width:400;
+  padding:1em;
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+
 .heading
 {
-  background-color: #ffcc66;
+  background-color: #1DB6F6;
   color: white;
   text-align: center;
   font-size: 100px;
@@ -78,24 +363,24 @@
 
 .heading2
 {
-  background-color: #00abab;
+  background-color: #1DB6F6;
   color: white;
   text-align: center;
   font-size: 100px;
   padding: 70px;
 }
 
-.reserve, .local, .bookit, .hydrotask
+.reserve, .local, .bookit, .personalweb, .hydrotask
 {
   background-color: transparent;
   padding: 20px;
   width: 300px;
   height: 200px;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px; /* Remove this if you don't want the 3D effect*/
 }
 
 /* This container is needed to position the front and back side */
-.reserve-inner, .local-inner, .bookit-inner, .hydrotask-inner
+.reserve-inner, .local-inner, .bookit-inner, .personalweb-inner, .hydrotask-inner
 {
   position: absolute;
   width: 100%;
@@ -108,13 +393,13 @@
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-.reserve:hover .reserve-inner, .local:hover .local-inner, .bookit:hover .bookit-inner, .hydrotask:hover .hydrotask-inner
+.reserve:hover .reserve-inner, .local:hover .local-inner, .bookit:hover .bookit-inner, .personalweb:hover .personalweb-inner, .hydrotask:hover .hydrotask-inner
 {
   transform: rotateY(180deg);
 }
 
 /* Position the front and back side */
-.reserve-front, .reserve-back, .local-front, .local-back, .bookit-front, .bookit-back, .hydrotask-front, .hydrotask-back
+.reserve-front, .reserve-back, .local-front, .local-back, .bookit-front, .bookit-back, .personalweb-back, .personalweb-front, .hydrotask-front, .hydrotask-back
 {
   position: absolute;
   width: 100%;
@@ -126,22 +411,23 @@
 }
 
 /* Style the front side (fallback if image is missing) */
-.reserve-front, .local-front, .bookit-front, .hydrotask-front
+.reserve-front, .local-front, .bookit-front, .personalweb-front, .hydrotask-front
 {
-  background-color: coral;
+  background-color: lightpink;
   color: white;
-
+  box-shadow: 10px 10px 5px grey;
 }
 
 /* Style the back side */
-.reserve-back, .local-back, .bookit-back, .hydrotask-back
+.reserve-back, .local-back, .bookit-back, .personalweb-back, .hydrotask-back
 {
-  background-color: coral;
+  background-color: lightpink;
   color: white;
   transform: rotateY(180deg);
+  box-shadow: 15px 15px 10px grey;
 }
 
-.reservecode, .localcode, .localdemo, .bookitcode, .download
+.reservecode, .localcode, .localdemo, .bookitcode, .personalwebcode, .download
 {
   background-color: transparent;
   border: 2px solid white;
@@ -156,9 +442,11 @@
   margin: 4px 2px;
 }
 
-.reservecode:hover, .localcode:hover, .localdemo:hover, .bookitcode:hover, .download:hover, .downloadresume:hover
+.reservecode:hover, .localcode:hover, .localdemo:hover, .bookitcode:hover, .personalwebcode:hover, .download:hover, .downloadresume:hover
 {
-  background-color: #66d3fa;
+  box-shadow: 10px 10px 5px grey;
+  background-color: #1db6f6;
+  border: 1px solid white;
 }
 
 .buttons
@@ -171,7 +459,7 @@
 {
   float: left;
   width: 25%;
-  padding: 0 20px;
+  padding: 0 50px;
 }
 
 /* Remove extra left and right margins, due to padding in columns */
@@ -188,7 +476,8 @@
   clear: both;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px)
+{
   .column {
     width: 100%;
     display: block;
@@ -207,7 +496,7 @@
 
 .downloadresume
 {
-  background-color: purple;
+  background-color: #1DB6F6;
   border: 2px solid white;
   border-color: white;
   border-radius: 12px;
@@ -221,15 +510,93 @@
   position: relative;
   top: 50%;
   left: 50%;
+  margin-right: 1300px;
+}
+
+.downloadresume:active {
+  background-color: #42A4F4;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.container {
+  height: 200px;
+  position: relative;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
 .contact
 {
-
+  background-color: #1DB6F6;
   height: 64%;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.emailimg
+{
+  margin-top: 100px;
+  margin-left: 200px;
+}*/
+
+.email
+{
+  color: white;
+  font-family: Glacial Indifference;
+  font-size: 20pt;
+}
+
+.linkedinimg
+{
+  margin-top: 100px;
+  margin-left: 160px;
+}
+
+.linkedin
+{
+  color: white;
+  font-family: Glacial Indifference;
+  font-size: 20pt;
+}
+
+.githubimg
+{
+  margin-top: 100px;
+  margin-left: 160px;
+}
+
+.column1 {
+  float: left;
+  width: 30%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row1::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column2 {
+  float: left;
+  width: 45%;
+  padding: 35px;
+}
+
+/* Clear floats after image containers */
+.row2::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 html {

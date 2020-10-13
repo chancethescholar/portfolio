@@ -3,24 +3,52 @@
   <link href = "style.css" rel = "stylesheet" type = "text/css">
 </head>
 
-<body style = "background-color: #ffcc66">
+<body style = "background-color: #1DB6F6">
   <header>
-    <div class = "row">
-      <ul class = "main-nav">
-        <li><a href = "index.html"> Home </a></li>
-        <li><a href = "index.html#about"> About </a></li>
-        <li><a href = "index.html#projects"> Projects </a></li>
-        <li><a href = "index.html#resume"> Resume </a></li>
-        <li><a href = "index.html#contact"> Contact </a></li>
-      </ul>
+    <div class = "collapsible-menu" style = "float: left; font-family: "Oswald", sans-serif;
+    padding: 0 0 0 50px;">
+      <input type="checkbox" id="menu">
+      <label for="menu"><br></label>
+      <div class = "main-nav" style = "color: lightpink">
+        <ul>
+          <li><a href = "index.html#home"> Home </a></li>
+          <li><a href = "index.html#about"> About </a></li>
+          <li><a href = "index.html#projects"> Projects </a></li>
+          <li><a href = "index.html#resume"> Resume </a></li>
+          <li><a href = "index.html#contact"> Contact </a></li>
+        </ul>
+      </div>
     </div>
 
 
-    <div>
-      <h1 class = "heading" style = "font-family: Comic Sans MS", cursive, sans-serif";>Software Projects</h1>
+    <div style = "display: inline">
+      <br><br><br><br><h1 class = "heading" style = "font-size: 100px; text-align: center; font-family: GlacialIndifferenceBold; color: white;";>Software Projects
+        <span style = "color: lightpink">&lt/&gt</span>
+      </h1>
+      <h1></h1>
     </div>
 
 <div class = "row">
+  <div class = "column">
+    <div class = "personalweb">
+      <div class = "personalweb-inner">
+        <div class = "personalweb-front">
+          <h1 style = "font-family: Comic Sans MS; padding: 80px;">Personal Website</h1>
+        </div>
+        <div class = "personalweb-back">
+          <p style = "font-family: Comic Sans MS; padding: 25px;">My personal website</p>
+          <img style = "padding: 0px" src = "pictures/html.png" alt = node height = 80px width = 80px>
+          <img style = "padding: 0px" src = "pictures/css.png" alt = express height = 80px width = 80px>
+          <div style = "font-family: Comic Sans MS; padding: 5px;">
+            <form action = "https://github.com/chancethescholar/personalwebsite">
+              <button class = "personalwebcode" type = "submit">See Code</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class = "column">
     <div class = "reserve">
       <div class = "reserve-inner">
@@ -68,7 +96,7 @@
     </div>
   </div>
 
-  <div class = "column">
+  <div class = "column" style = "padding-top: 100px">
     <div class = "bookit">
       <div class = "bookit-inner">
         <div class = "bookit-front">
@@ -83,7 +111,7 @@
             <form action = "https://github.com/chancethescholar/bookit">
               <button class = "bookitcode" type = "submit">See Code</button>
             </form>
-          </div>
+          </div><br><br><br>
         </div>
       </div>
     </div>
